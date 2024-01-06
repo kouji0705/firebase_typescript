@@ -1,11 +1,16 @@
-import { addDoc, collection, doc, writeBatch } from 'firebase/firestore';
-import { deleteApp } from 'firebase/app';
-import { db } from '..';
+import {
+  Firestore,
+  addDoc,
+  collection,
+  doc,
+  writeBatch,
+} from 'firebase/firestore';
+import { FirebaseApp, deleteApp } from 'firebase/app';
 import { USERS_DOCUMENT_NAME } from '../constants/document';
 import { IUser } from '../../../domain/users/model';
 
 // 新しいユーザーを作成する
-export async function createNewUser(user: IUser) {
+export async function createNewUser(db: Firestore, user: IUser) {
   try {
     const docRef = await addDoc(collection(db, USERS_DOCUMENT_NAME), user);
     console.log('ドキュメント作成成功！ドキュメントID: ', docRef.id);

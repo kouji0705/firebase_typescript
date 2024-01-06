@@ -9,7 +9,7 @@ import { deleteUser } from './delete';
 export class UserRepository implements IUserRepository {
   constructor(private db: Firestore) {}
   async createNewUser(user: IUser): Promise<void> {
-    return createNewUser(user);
+    return createNewUser(this.db, user);
   }
   async updateUser(docId: string, user: IUser): Promise<void> {
     return updateUser(docId, user);
