@@ -8,7 +8,7 @@ import { UserRepository } from './repository/firestore/users';
   const user = await userRepository.findById(docId);
   console.log(user);
   const users = await userRepository.getUsers();
-  console.log('=======HIT8 ', users);
+  console.log('=======users ', users);
   const newUser: IUser = {
     name: 'newUser',
     email: 'oo@gmail.com',
