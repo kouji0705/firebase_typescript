@@ -1,9 +1,9 @@
 import { doc, updateDoc } from 'firebase/firestore';
-import { app, db } from '../firestore';
-import { deleteApp } from 'firebase/app';
+import { db, app } from '..';
+import { USERS_DOCUMENT_NAME } from '../constants/document';
 
 async function updateUser(docId: string) {
-  const docRef = doc(db, 'users', docId);
+  const docRef = doc(db, USERS_DOCUMENT_NAME, docId);
 
   try {
     await updateDoc(docRef, {
@@ -13,11 +13,5 @@ async function updateUser(docId: string) {
     console.log('ドキュメント更新成功！');
   } catch (e) {
     console.error('ドキュメント更新エラー: ', e);
-  } finally {
-    // 処理が完了したらFirebaseの接続を閉じる
-    await deleteApp(app);
   }
 }
-
-const docId = 'KZc9Ko0wSGVUHOqOO3Dx'; // 更新したいドキュメントのID
-updateUser(docId);
