@@ -1,9 +1,9 @@
-import { doc, deleteDoc } from 'firebase/firestore';
+import { doc, deleteDoc, Firestore } from 'firebase/firestore';
 import { app, db } from '..';
 import { deleteApp } from 'firebase/app';
 import { USERS_DOCUMENT_NAME } from '../constants/document';
 
-export async function deleteUser(docId: string) {
+export async function deleteUser(db: Firestore, docId: string) {
   const docRef = doc(db, USERS_DOCUMENT_NAME, docId);
 
   try {

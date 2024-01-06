@@ -12,15 +12,15 @@ export class UserRepository implements IUserRepository {
     return createNewUser(this.db, user);
   }
   async updateUser(docId: string, user: IUser): Promise<void> {
-    return updateUser(docId, user);
+    return updateUser(this.db, docId, user);
   }
   async deleteUser(docId: string): Promise<void> {
-    return deleteUser(docId);
+    return deleteUser(this.db, docId);
   }
   async findById(id: string): Promise<IUser | null> {
-    return findById(id);
+    return findById(this.db, id);
   }
   async getUsers(): Promise<IUser[]> {
-    return getUsers();
+    return getUsers(this.db);
   }
 }
