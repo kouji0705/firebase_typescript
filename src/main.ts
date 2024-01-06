@@ -1,3 +1,4 @@
+import { IUser } from './domain/users/model';
 import { db } from './repository/firestore';
 import { UserRepository } from './repository/firestore/users';
 
@@ -8,4 +9,9 @@ import { UserRepository } from './repository/firestore/users';
   console.log(user);
   const users = await userRepository.getUsers();
   console.log('=======HIT8 ', users);
+  const newUser: IUser = {
+    name: 'newUser',
+    email: 'oo@gmail.com',
+  };
+  await userRepository.createNewUser(newUser);
 })();

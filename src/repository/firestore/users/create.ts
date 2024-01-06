@@ -5,7 +5,7 @@ import { USERS_DOCUMENT_NAME } from '../constants/document';
 import { IUser } from '../../../domain/users/model';
 
 // 新しいユーザーを作成する
-async function createNewUser(user: IUser) {
+export async function createNewUser(user: IUser) {
   try {
     const docRef = await addDoc(collection(db, USERS_DOCUMENT_NAME), user);
     console.log('ドキュメント作成成功！ドキュメントID: ', docRef.id);
