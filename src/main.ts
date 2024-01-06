@@ -6,4 +6,6 @@ import { UserRepository } from './repository/firestore/users';
   const docId = 'sxsUyqyyuVIK4sfVktne';
   const user = await userRepository.findById(docId);
   console.log(user);
+  const users = await userRepository.getUsers();
+  console.log('=======HIT8 ', users);
 })();

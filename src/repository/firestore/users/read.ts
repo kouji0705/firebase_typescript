@@ -5,11 +5,9 @@ import { IUser } from '../../../domain/users/model';
 import { USERS_DOCUMENT_NAME } from '../constants/document';
 
 // コレクションの全ドキュメントを取得する
-async function getUsers() {
+export async function getUsers(): Promise<IUser[]> {
   const querySnapshot = await getDocs(collection(db, USERS_DOCUMENT_NAME));
-  querySnapshot.forEach((doc) => {
-    console.log(`${doc.id} => ${JSON.stringify(doc.data())}`);
-  });
+  return querySnapshot.docs.map((doc) => doc.data()) as IUser[];
 }
 
 // コレクション内の対象ドキュメントを取得する
