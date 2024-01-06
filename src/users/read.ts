@@ -14,7 +14,7 @@ async function getUsers() {
 }
 
 // コレクション内の対象ドキュメントを取得する
-async function getUser(docId: string) {
+async function findById(docId: string) {
   const docRef = doc(db, 'users', docId);
   const docSnap = await getDoc(docRef);
 
