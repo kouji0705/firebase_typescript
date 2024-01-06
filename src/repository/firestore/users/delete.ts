@@ -1,6 +1,4 @@
 import { doc, deleteDoc, Firestore } from 'firebase/firestore';
-import { app, db } from '..';
-import { deleteApp } from 'firebase/app';
 import { USERS_DOCUMENT_NAME } from '../constants/document';
 
 export async function deleteUser(db: Firestore, docId: string) {

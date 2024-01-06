@@ -6,7 +6,6 @@ import {
   getDoc,
   getDocs,
 } from 'firebase/firestore';
-import { app, db } from '..';
 import { IUser } from '../../../domain/users/model';
 import { USERS_DOCUMENT_NAME } from '../constants/document';
 

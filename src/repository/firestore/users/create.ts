@@ -1,11 +1,4 @@
-import {
-  Firestore,
-  addDoc,
-  collection,
-  doc,
-  writeBatch,
-} from 'firebase/firestore';
-import { FirebaseApp, deleteApp } from 'firebase/app';
+import { Firestore, addDoc, collection } from 'firebase/firestore';
 import { USERS_DOCUMENT_NAME } from '../constants/document';
 import { IUser } from '../../../domain/users/model';
 
