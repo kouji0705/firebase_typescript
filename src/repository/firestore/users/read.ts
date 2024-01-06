@@ -1,6 +1,6 @@
 import { deleteApp } from 'firebase/app';
 import { collection, doc, getDoc, getDocs } from 'firebase/firestore';
-import { db, app } from '../firestore';
+import { app, db } from '..';
 
 // コレクションの全ドキュメントを取得する
 async function getUsers() {

@@ -1,5 +1,6 @@
 import { doc, getDoc, Firestore } from 'firebase/firestore';
-import { IUser, IUserRepository } from './interface';
+import { IUserRepository } from '../../../domain/users/repository';
+import { IUser } from '../../../domain/users/model';
 
 export class UserRepository implements IUserRepository {
   constructor(private db: Firestore) {}

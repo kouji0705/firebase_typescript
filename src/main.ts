@@ -1,5 +1,5 @@
-import { db } from './firestore';
-import { UserRepository } from './users';
+import { db } from './repository/firestore';
+import { UserRepository } from './repository/firestore/users';
 
 const userRepository = new UserRepository(db);
 const docId = 'sxsUyqyyuVIK4sfVktne';

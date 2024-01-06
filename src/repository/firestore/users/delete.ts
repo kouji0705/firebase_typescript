@@ -1,5 +1,5 @@
 import { doc, deleteDoc } from 'firebase/firestore';
-import { app, db } from '../firestore';
+import { app, db } from '..';
 import { deleteApp } from 'firebase/app';
 
 async function deleteUser(docId: string) {
