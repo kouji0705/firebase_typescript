@@ -1,6 +1,6 @@
 import { deleteApp } from 'firebase/app';
-import { collection, getDocs } from 'firebase/firestore';
 import { db, app } from './firestore';
+import { collection, getDocs } from 'firebase/firestore';
 
 async function getUsers() {
   const querySnapshot = await getDocs(collection(db, 'users'));
